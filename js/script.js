@@ -16,8 +16,6 @@ function adicionarAoCarrinho(nome, preco) {
     lista.removeChild(item);
     total -= preco;
     atualizarTotal();
-    
-  document.getElementById("total").textContent = total.toFixed(2);
   };
   
   item.appendChild(botaoRemover);
@@ -26,6 +24,7 @@ function adicionarAoCarrinho(nome, preco) {
   total += preco;
   atualizarTotal():
   }
+
 function atualizarTotal() {
   
   document.getElementById("total").textContent = total.toFixed(2);
