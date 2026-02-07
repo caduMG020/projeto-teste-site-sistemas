@@ -1,6 +1,8 @@
 let total = 0;
 
 function adicionarAoCarrinho(nome, preco) {
+  preco = Number(preco);
+  
   const lista = document.getElementById("lista-carrinho");
 
   const item = document.createElement("li");
@@ -13,6 +15,7 @@ function adicionarAoCarrinho(nome, preco) {
   botaoRemover.onclick = function () {
     lista.removeChild(item);
     total -= preco;
+    atualizarTotal();
     
   document.getElementById("total").textContent = total.toFixed(2);
   };
@@ -21,6 +24,9 @@ function adicionarAoCarrinho(nome, preco) {
   lista.appendChild(item);
 
   total += preco;
+  atualizarTotal():
+  }
+function atualizarTotal() {
   
   document.getElementById("total").textContent = total.toFixed(2);
 }
