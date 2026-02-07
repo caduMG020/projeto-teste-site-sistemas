@@ -6,12 +6,13 @@ function adicionarAoCarrinho(nome, preco) {
   const item = document.createElement("li");
   item.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
 
-  const botaoRemover = document.createElement("button");
+  const botaoRemover = 
+document.createElement("button");
   botaoRemover.textContent = "X";
   botaoRemover.style.marginLeft = "10px";
 
   botaoRemover.onclick = function () {
-    lista.removerChild(item);
+    lista.removeChild(item);
     total -= preco;
     
   document.getElementById("total").textContent = total.toFixed(2);
