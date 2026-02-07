@@ -1,15 +1,15 @@
 let total = 0;
 
 function adicionarAoCarrinho(nome, preco) {
-  preco = Number(preco);
-  
+  preco = Number(preco); // GARANTE que é número
+
   const lista = document.getElementById("lista-carrinho");
 
   const item = document.createElement("li");
-  item.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
+  item.textContent = `${nome} - R$ ${preco.toFixed(2)} `;
 
   const botaoRemover = document.createElement("button");
-  botaoRemover.textContent = "X";
+  botaoRemover.textContent = "❌";
   botaoRemover.style.marginLeft = "10px";
 
   botaoRemover.onclick = function () {
@@ -17,15 +17,14 @@ function adicionarAoCarrinho(nome, preco) {
     total -= preco;
     atualizarTotal();
   };
-  
+
   item.appendChild(botaoRemover);
   lista.appendChild(item);
 
   total += preco;
-  atualizarTotal():
-  }
+  atualizarTotal();
+}
 
 function atualizarTotal() {
-  
   document.getElementById("total").textContent = total.toFixed(2);
 }
